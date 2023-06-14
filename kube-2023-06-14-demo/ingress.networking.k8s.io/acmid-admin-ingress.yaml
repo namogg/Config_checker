@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    haproxy.org/ssl-redirect: "true"
+    kubernetes.io/ingress.class: haproxy
+  creationTimestamp: "2023-02-27T06:56:38Z"
+  generation: 3
+  name: acmid-admin-ingress
+  namespace: acm-production
+  resourceVersion: "34712285"
+  uid: 5b4a9dbc-c73e-4c3c-9a69-cef4a18f07a2
+spec:
+  rules:
+  - host: acm-admin.awing.com.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmadmin-web-svc
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  - host: acm-admin.awing.com.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmadmin-api-svc
+            port:
+              number: 80
+        path: /api/
+        pathType: Prefix
+  tls:
+  - hosts:
+    - acm-admin.awing.com.vn
+    secretName: awingcomtls
+status:
+  loadBalancer:
+    ingress:
+    - ip: 172.16.1.32

@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  AcmSolverConfiguration__Grpc__AcmCplexSolverTarget: http://acm-cplex-solver-svc.default:80
+  AcmSolverConfiguration__Grpc__TargetPort: "50051"
+  AcmSolverConfiguration__MongoDB__MongoDbConnectionString: mongodb://192.168.10.24:27017,192.168.10.34:27017,192.168.10.44:27017
+  AcmSolverConfiguration__MongoDB__MongoDbName: acmSolver
+  AcmSolverConfiguration__Service__EvennessPriority: "0.1"
+  AcmSolverConfiguration__Service__LowerRatio: "0.1"
+  AcmSolverConfiguration__Service__MaxResolveLoop: "1"
+  AcmSolverConfiguration__Service__ProblemMaxSize: "2000000"
+  AcmSolverConfiguration__Service__SolveMaxProcess: "4"
+  AcmSolverConfiguration__Service__SolveMethod: SolveTwoSteps
+  AcmSolverConfiguration__Service__StreamBatchSize: "10000"
+  AcmSolverConfiguration__Service__TimeLimitInSeconds: "21600"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-11-16T15:14:03Z"
+  labels:
+    app: acmsolver
+  name: acmsolver-config
+  namespace: default
+  resourceVersion: "99182254"
+  uid: 83dfc2d4-068b-4c75-a366-39da7f83463a

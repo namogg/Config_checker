@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  AcmCampaignConfiguration__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=acmCampaign;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmCampaignConfiguration__DeviceDatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=acmDevice;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmCampaignConfiguration__GrpcHost: 0.0.0.0
+  AcmCampaignConfiguration__GrpcPort: "10054"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:18Z"
+  labels:
+    app: acmcampaign
+  name: acmcampaign-config
+  namespace: acm-production
+  resourceVersion: "27476522"
+  uid: f601a2c8-55f8-48a8-979a-428068f7ef66

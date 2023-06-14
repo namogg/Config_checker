@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+  AcmCampaignMatchRateConfiguration__CollectCustomerDataPeriod: "60"
+  AcmCampaignMatchRateConfiguration__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=acmCampaignMatchRate;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmCampaignMatchRateConfiguration__GetCacheHour: "22"
+  AcmCampaignMatchRateConfiguration__Grpc__AcmAdminTarget: http://acmadmin-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AcmAdpTarget: http://acmadp-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AcmCampaignTarget: http://acmcampaign-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AxnCampaignTarget: http://axncampaign-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AxnPlaceTarget: http://axnplace-svc.acm-production:80
+  AcmCampaignMatchRateConfiguration__GrpcHost: 0.0.0.0
+  AcmCampaignMatchRateConfiguration__GrpcPort: "10069"
+  AcmCampaignMatchRateConfiguration__Kafka__BootstrapServers: 172.16.1.106:9093
+  AcmCampaignMatchRateConfiguration__MaxDegreeOfParallelism: "2"
+  AcmCampaignMatchRateConfiguration__RedisConnectionString: 172.16.1.106:6380
+  AcmCampaignMatchRateConfiguration__RedisDatabaseId: "7"
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+  creationTimestamp: "2023-02-27T04:14:18Z"
+  labels:
+    app: acmcampaignmatchrate
+  name: acmcampaignmatchrate-config
+  namespace: acm-production
+  resourceVersion: "26430107"
+  uid: 215f551e-60c4-4c8f-bb7c-bc5203455251

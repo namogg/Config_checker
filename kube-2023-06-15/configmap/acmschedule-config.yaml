@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  AcmScheduleConfiguration__Service__DatabaseConnectionString: Server=192.168.10.54;Database=acmSchedule;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmScheduleConfiguration__Service__DatabaseConnectionTimeout: "30"
+  AcmScheduleConfiguration__Service__GrpcHost: 0.0.0.0
+  AcmScheduleConfiguration__Service__GrpcPort: "10060"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-07-28T15:46:34Z"
+  labels:
+    app: acmschedule
+  name: acmschedule-config
+  namespace: default
+  resourceVersion: "8732152"
+  uid: 53f9adf5-ae89-4bae-a7d8-b9ac6f397a84

@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  config.js: |
+    window.REACT_APP_API_ENDPOINT = 'https://acm.awing.com.vn/api'
+    window.REACT_APP_I18NEXT_BACKEND = '/locales/{{lng}}/{{ns}}.json'
+    window.GOOGLE_API_KEY = 'AIzaSyDvLhvxZpQc49FzFoReP_K5yicT33kzcsw'
+    window.GOONG_API_KEY = 'JUkTlUZ11wZmX6jSPoLPtEsG8VuPbMddMcihKNoe'
+    window.GOONG_MAP_KEY = 'hSwoA8SR8o0yMkP7ucnADcx3xY8OD4MnxZTMrCfo'
+    window.REACT_APP_CAPTIVE_DOMAIN = 'http://connect.awing.com.vn'
+    window.REACT_APP_ID_DOMAIN = 'http://id.awing.com.vn'
+    window.REACT_APP_FILE_STATIC_PATH = '/static/Files'
+    window.REACT_APP_FILE_TEMP_PATH = '/static/Files/temp'
+    window.REACT_APP_TEMPLATE_FILE_PATH = "/static/Files/template"
+    window.CLIENT_ID = '200'
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:25Z"
+  name: acm-web-config
+  namespace: acm-production
+  resourceVersion: "24702325"
+  uid: e35cec24-f6e0-41d8-b6e8-d26574b1be4d

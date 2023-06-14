@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  AcmCampaignConfiguration__DatabaseConnectionString: Server=192.168.10.54;Database=acmCampaign;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmCampaignConfiguration__DeviceDatabaseConnectionString: Server=192.168.10.54;Database=acmDevice;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmCampaignConfiguration__GrpcHost: 0.0.0.0
+  AcmCampaignConfiguration__GrpcPort: "10054"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-07-28T15:23:41Z"
+  labels:
+    app: acmcampaign
+  name: acmcampaign-config
+  namespace: default
+  resourceVersion: "8728575"
+  uid: 133fede3-49da-45c3-becd-ef122ff91da6

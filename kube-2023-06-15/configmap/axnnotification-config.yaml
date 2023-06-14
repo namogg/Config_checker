@@ -1,0 +1,22 @@
+apiVersion: v1
+data:
+  AxnNotificationConfiguration__Grpc__AcmAdminTarget: http://acmadmin-svc:80
+  AxnNotificationConfiguration__Grpc__AcmSagaTarget: http://acmsaga-svc:80
+  AxnNotificationConfiguration__Grpc__AxnAdminTarget: http://axnadmin-svc:80
+  AxnNotificationConfiguration__Grpc__AxnCampaignTarget: http://axncampaign-svc:80
+  AxnNotificationConfiguration__Grpc__AxnPlaceTarget: http://axnplace-svc:80
+  AxnNotificationConfiguration__KafkaConfiguration__BootstrapServers: 192.168.10.25:9092,192.168.10.35:9092,192.168.10.45:9092
+  AxnNotificationConfiguration__Service__DatabaseConnectionString: Server=192.168.10.54;Database=axnNotification;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AxnNotificationConfiguration__Service__DatabaseConnectionTimeout: "30"
+  AxnNotificationConfiguration__Service__GrpcHost: 0.0.0.0
+  AxnNotificationConfiguration__Service__GrpcPort: "11057"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-06-09T19:22:57Z"
+  labels:
+    app: axnnotification
+  name: axnnotification-config
+  namespace: default
+  resourceVersion: "112851533"
+  uid: 61ad295a-522f-433f-af47-bf82a1543a37

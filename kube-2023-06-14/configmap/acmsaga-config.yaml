@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  AcmSagaConfiguration__Service__DatabaseConnectionString: Server=192.168.10.54;Database=acmSaga;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmSagaConfiguration__Service__GrpcHost: 0.0.0.0
+  AcmSagaConfiguration__Service__GrpcPort: "11056"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-06-09T19:21:56Z"
+  labels:
+    app: acmsaga
+  name: acmsaga-config
+  namespace: default
+  resourceVersion: "9219"
+  uid: aa5fb5c7-f414-49b2-b7e1-22b5a34d2972

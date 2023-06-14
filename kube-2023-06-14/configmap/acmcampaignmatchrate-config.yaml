@@ -1,0 +1,26 @@
+apiVersion: v1
+data:
+  AcmCampaignMatchRateConfiguration__CollectCustomerDataPeriod: "60"
+  AcmCampaignMatchRateConfiguration__DatabaseConnectionString: Server=192.168.10.54;Database=acmCampaignMatchRate;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmCampaignMatchRateConfiguration__GetCacheHour: "22"
+  AcmCampaignMatchRateConfiguration__Grpc__AcmAdminTarget: http://acmadmin-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AcmAdpTarget: http://acmadp-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AcmCampaignTarget: http://acmcampaign-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AxnCampaignTarget: http://axncampaign-svc:80
+  AcmCampaignMatchRateConfiguration__Grpc__AxnPlaceTarget: http://axnplace-svc.default:80
+  AcmCampaignMatchRateConfiguration__GrpcHost: 0.0.0.0
+  AcmCampaignMatchRateConfiguration__GrpcPort: "10069"
+  AcmCampaignMatchRateConfiguration__Kafka__BootstrapServers: 192.168.10.25:9092,192.168.10.35:9092,192.168.10.45:9092
+  AcmCampaignMatchRateConfiguration__MaxDegreeOfParallelism: "2"
+  AcmCampaignMatchRateConfiguration__RedisConnectionString: 192.168.10.25:6379,192.168.10.35:6379,192.168.10.45:6379
+  AcmCampaignMatchRateConfiguration__RedisDatabaseId: "7"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-06-09T19:21:01Z"
+  labels:
+    app: acmcampaignmatchrate
+  name: acmcampaignmatchrate-config
+  namespace: default
+  resourceVersion: "36158255"
+  uid: de34ba16-c435-495a-ba34-944f12fd48b5

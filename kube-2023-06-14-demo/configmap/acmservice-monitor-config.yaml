@@ -1,0 +1,63 @@
+apiVersion: v1
+data:
+  appsettings.json: |-
+    {
+        "AcmService": {
+        "AxnAdminTarget": "http://axnadmin-svc.acm-production:80",
+        "DatabaseConnectionString": "Server=172.16.1.106;Database=acmSaga;user id=acm;password=Awing@2023;CharSet=utf8;"
+        },
+        "Schedule": {
+          "StartHour": 8,
+          "EndHour": 20,
+          "IntervalHour": 6
+        },
+        "SSH": {
+        "Host": "192.168.10.25",
+        "Port": "22",
+        "Username": "root",
+        "Password": "AWing2020@*1",
+        "Command": "/root/kafka_2.13-2.5.0/bin/kafka-consumer-groups.sh --bootstrap-server 192.168.10.25:9092 --all-groups --describe | awk '$6>=0 {print $1, $2,$3, $6}' | awk '$1 != \"GROUP\" && $2!=\"TOPIC\" {print $1,$2,$3,$4}'"
+        },
+        "BIProcess": [
+        {
+            "groupName": "AnalyticViewQueueToAnalyticApSummary",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticViewQueueToAnalyticView",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticViewQueueToAnalyticCampaignSummary",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticViewQueueToAudienceObject",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticEventQueueToAnalyticEvent",
+            "consumerLag": 50
+        }
+        ],
+        "Logging": {
+        "LogLevel": {
+            "acm-production": "Information",
+            "Microsoft": "Warning",
+            "System.Net.Http.HttpClient": "Warning",
+            "Microsoft.Hosting.Lifetime": "Information"
+        }
+        },
+        "AllowedHosts": "*"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+  creationTimestamp: "2023-02-27T04:14:24Z"
+  labels:
+    app: acmservice-monitor
+  name: acmservice-monitor-config
+  namespace: acm-production
+  resourceVersion: "23551548"
+  uid: 78d44f7d-1724-406f-a79d-c4a2f32515c8

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-27T06:54:28Z"
+  labels:
+    app: acmschedulecalculation
+  name: acmschedulecalculation-svc
+  namespace: acm-production
+  resourceVersion: "24698582"
+  uid: f10ee903-f859-4999-bbc1-d6462f15ed5a
+spec:
+  clusterIP: 10.111.197.19
+  clusterIPs:
+  - 10.111.197.19
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32169
+    port: 80
+    protocol: TCP
+    targetPort: 10060
+  selector:
+    app: acmschedulecalculation
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

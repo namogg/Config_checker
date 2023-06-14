@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-09T19:25:49Z"
+  labels:
+    app: acmid
+  name: acmid-svc
+  namespace: default
+  resourceVersion: "9842"
+  uid: 49faf3c3-4051-4c5f-8012-8ce650366e0b
+spec:
+  clusterIP: 10.110.183.176
+  clusterIPs:
+  - 10.110.183.176
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31292
+    port: 80
+    protocol: TCP
+    targetPort: 10051
+  selector:
+    app: acmid
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

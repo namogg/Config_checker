@@ -1,0 +1,45 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  creationTimestamp: "2021-10-25T08:27:03Z"
+  name: deleting-pod-acmresourceforecast
+  namespace: default
+  resourceVersion: "129175287"
+  uid: ce0b39d7-75a6-4e4d-9259-0aa8db7652f0
+spec:
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+    spec:
+      activeDeadlineSeconds: 600
+      backoffLimit: 2
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - args:
+            - kubectl delete pod $(kubectl get pod -l app=acmresourceforecast -o jsonpath="{.items[0].metadata.name}")
+            command:
+            - /bin/sh
+            - -c
+            image: bitnami/kubectl
+            imagePullPolicy: Always
+            name: kubectl
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+          dnsPolicy: ClusterFirst
+          restartPolicy: OnFailure
+          schedulerName: default-scheduler
+          securityContext: {}
+          serviceAccount: deleting-pods
+          serviceAccountName: deleting-pods
+          terminationGracePeriodSeconds: 30
+  schedule: 0 5 * * 2
+  successfulJobsHistoryLimit: 3
+  suspend: false
+status:
+  lastScheduleTime: "2023-06-13T05:00:00Z"

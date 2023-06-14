@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-04-07T03:56:37Z"
+  labels:
+    app: old-acmresourceforecast
+  name: old-acmresourceforecast-svc
+  namespace: acm-production
+  resourceVersion: "28583134"
+  uid: 8d8a0e59-a0bd-4d2c-a1fd-66182f12c505
+spec:
+  clusterIP: 10.110.115.123
+  clusterIPs:
+  - 10.110.115.123
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31455
+    port: 80
+    protocol: TCP
+    targetPort: 50052
+  selector:
+    app: old-acmresourceforecast
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-08-09T07:46:05Z"
+  labels:
+    app: acmadmin-web
+  name: acmadmin-web-svc
+  namespace: default
+  resourceVersion: "10814397"
+  uid: 26f7700e-9d73-43d9-b4e5-273d7a38fb13
+spec:
+  clusterIP: 10.105.230.245
+  clusterIPs:
+  - 10.105.230.245
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32465
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: acmadmin-web
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

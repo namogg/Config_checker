@@ -1,0 +1,61 @@
+apiVersion: v1
+data:
+  appsettings.json: |-
+    {
+        "AcmService": {
+        "AxnAdminTarget": "http://axnadmin-svc.default:80",
+        "DatabaseConnectionString": "Server=192.168.10.54;Database=acmSaga;user id=acm;password=Awing@2018;CharSet=utf8;"
+        },
+        "Schedule": {
+          "StartHour": 8,
+          "EndHour": 20,
+          "IntervalHour": 6
+        },
+        "SSH": {
+        "Host": "192.168.10.25",
+        "Port": "22",
+        "Username": "root",
+        "Password": "AWing2020@*1",
+        "Command": "/root/kafka_2.13-2.5.0/bin/kafka-consumer-groups.sh --bootstrap-server 192.168.10.25:9092 --all-groups --describe | awk '$6>=0 {print $1, $2,$3, $6}' | awk '$1 != \"GROUP\" && $2!=\"TOPIC\" {print $1,$2,$3,$4}'"
+        },
+        "BIProcess": [
+        {
+            "groupName": "AnalyticViewQueueToAnalyticApSummary",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticViewQueueToAnalyticView",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticViewQueueToAnalyticCampaignSummary",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticViewQueueToAudienceObject",
+            "consumerLag": 50
+        },
+        {
+            "groupName": "AnalyticEventQueueToAnalyticEvent",
+            "consumerLag": 50
+        }
+        ],
+        "Logging": {
+        "LogLevel": {
+            "Default": "Information",
+            "Microsoft": "Warning",
+            "System.Net.Http.HttpClient": "Warning",
+            "Microsoft.Hosting.Lifetime": "Information"
+        }
+        },
+        "AllowedHosts": "*"
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-10-07T10:35:18Z"
+  labels:
+    app: acmservice-monitor
+  name: acmservice-monitor-config
+  namespace: default
+  resourceVersion: "93697854"
+  uid: 9d99127c-a86d-4a61-86e2-a5fbdb385097

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-27T06:54:29Z"
+  labels:
+    app: axn-api
+  name: axn-api-svc
+  namespace: acm-production
+  resourceVersion: "24694222"
+  uid: 9facd264-11dd-4741-9e5c-bacfea03909e
+spec:
+  clusterIP: 10.108.75.26
+  clusterIPs:
+  - 10.108.75.26
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32693
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: axn-api
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

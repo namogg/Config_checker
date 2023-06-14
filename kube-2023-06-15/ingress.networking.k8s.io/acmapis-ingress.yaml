@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    haproxy.org/cookie-persistence: ingresscookie
+    kubernetes.io/ingress.class: haproxy
+  creationTimestamp: "2022-01-04T23:42:17Z"
+  generation: 2
+  name: acmapis-ingress
+  namespace: default
+  resourceVersion: "120989497"
+  uid: 029ba92f-3286-4304-8c0e-47eb5ed576f6
+spec:
+  rules:
+  - host: acmapis.awing.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmapis-svc
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer: {}

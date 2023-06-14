@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  AcmAdpCronServiceConfiguration__KafkaServer: 172.16.1.106:9093
+  AcmAdpCronServiceConfiguration__MongoDbConnectionString: mongodb://172.16.1.106:27018
+  AcmAdpCronServiceConfiguration__MongoDbName: acm
+  AcmAdpCronServiceConfiguration__TimeScaleDbConnectionString: Host=172.16.1.106;Port=5433;Database=acm;Username=acm;Password=Awing@2020
+  AcmAdpCronServiceConfiguration__TimeScaleDbSchema: public
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:17Z"
+  labels:
+    app: acmadpcronservice
+  name: acmadpcronservice-config
+  namespace: acm-production
+  resourceVersion: "29437002"
+  uid: 91625089-8316-489c-a142-c16a48418719

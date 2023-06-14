@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+  AdsConfiguration__Grpc__AcmAdpTarget: http://acmadp-svc.default:80
+  AdsConfiguration__Grpc__AcmCampaignMatchRateTarget: http://acmcampaignmatchrate-svc.default:80
+  AdsConfiguration__Grpc__AcmCampaignTarget: http://acmcampaign-svc.default:80
+  AdsConfiguration__Grpc__AcmPlaceTarget: http://acmplace-svc.default:80
+  AdsConfiguration__Grpc__AcmRemarketingTarget: http://acmremarketing-svc.default:80
+  AdsConfiguration__Grpc__AcmScheduleTarget: http://acmschedule-svc.default:80
+  AdsConfiguration__Grpc__AxnCampaignTarget: http://axncampaign-svc.default:80
+  AdsConfiguration__Grpc__AxnPlaceTarget: http://axnplace-svc.default:80
+  AdsConfiguration__Kafka__BootstrapServers: 192.168.10.25:9092,192.168.10.35:9092,192.168.10.45:9092
+  AdsConfiguration__MongoDB__MongoDbConnectionString: mongodb://192.168.10.24:27017,192.168.10.34:27017,192.168.10.44:27017
+  AdsConfiguration__MongoDB__MongoDbName: acmAds
+  AdsConfiguration__Service__ExpiredTime: "23:55"
+  AdsConfiguration__Service__GrpcHost: 0.0.0.0
+  AdsConfiguration__Service__GrpcPort: "10056"
+  AdsConfiguration__Service__MaxQueue: "100"
+  AdsConfiguration__Service__RedisHosts: 192.168.10.25:6379,192.168.10.35:6379,192.168.10.45:6379
+  Logging__LogLevel__Default: Information
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-07-28T15:32:23Z"
+  labels:
+    app: acmads
+  name: acmads-config
+  namespace: default
+  resourceVersion: "124745937"
+  uid: ac35be43-e7ad-4d83-9fa3-df1125b06f90
