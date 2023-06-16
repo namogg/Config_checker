@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-09T19:25:43Z"
+  labels:
+    app: acmcaptive-web
+  name: acmcaptive-web-svc
+  namespace: default
+  resourceVersion: "9822"
+  uid: b551e39d-072d-4ef9-9ccb-f10d59292430
+spec:
+  clusterIP: 10.108.35.37
+  clusterIPs:
+  - 10.108.35.37
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31893
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: acmcaptive-web
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

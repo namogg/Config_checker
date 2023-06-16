@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "9"
+  creationTimestamp: "2021-08-09T07:47:00Z"
+  generation: 10
+  labels:
+    app: acmadmin-web
+  name: acmadmin-web-dep
+  namespace: default
+  resourceVersion: "112846538"
+  uid: f4b11918-cb9c-4af1-b8d5-60e8cd4d0e7a
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: acmadmin-web
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: acmadmin-web
+    spec:
+      containers:
+      - image: registry.awing.vn/acm-production/acmadmin-web:2.0.19
+        imagePullPolicy: IfNotPresent
+        name: acmadmin-web
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /app/config.js
+          name: aonconfigmap
+          readOnly: true
+          subPath: config.js
+        - mountPath: /acmResources
+          name: acmstatic
+        - mountPath: /etc/localtime
+          name: awingtimezone
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: registry-production-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: acmadmin-web-config
+        name: aonconfigmap
+      - glusterfs:
+          endpoints: glusterfs-cluster
+          path: gv-acm
+        name: acmstatic
+      - hostPath:
+          path: /usr/share/zoneinfo/Asia/Ho_Chi_Minh
+          type: ""
+        name: awingtimezone
+status:
+  availableReplicas: 2
+  conditions:
+  - lastTransitionTime: "2021-08-09T07:47:00Z"
+    lastUpdateTime: "2023-02-01T09:20:33Z"
+    message: ReplicaSet "acmadmin-web-dep-6f7b9f964d" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2023-03-09T15:24:53Z"
+    lastUpdateTime: "2023-03-09T15:24:53Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 10
+  readyReplicas: 2
+  replicas: 2
+  updatedReplicas: 2

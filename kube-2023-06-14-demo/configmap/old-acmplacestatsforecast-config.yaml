@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  AcmPlaceStatsForecastConfiguration__Grpc__AcmAdminTarget: http://acmadmin-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Grpc__AcmAdpTarget: http://acmadp-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Grpc__AcmCampaignTarget: http://acmcampaign-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Grpc__AcmPlaceTarget: http://acmplace-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Grpc__AcmResourceForecastTarget: http://old-acmresourceforecast-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Grpc__AcmSagaTarget: http://acmsaga-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Grpc__AxnCampaignTarget: http://axncampaign-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Grpc__AxnPlaceTarget: http://axnplace-svc.acm-production:80
+  AcmPlaceStatsForecastConfiguration__Kafka__BootstrapServers: 172.16.1.106:9093
+  AcmPlaceStatsForecastConfiguration__Service__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=acmPlace;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmPlaceStatsForecastConfiguration__Service__DatabaseConnectionTimeout: "100"
+  AcmPlaceStatsForecastConfiguration__Service__MaxDegreeOfParallelism: "4"
+  AcmPlaceStatsForecastConfiguration__Service__NumDays: "28"
+  AcmPlaceStatsForecastConfiguration__Service__RedisConnectionString: 172.16.1.106:6380
+  AcmPlaceStatsForecastConfiguration__Service__SampleSize: "10000"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-04-07T07:03:01Z"
+  labels:
+    app: old-acmplacestatsforecast
+  name: old-acmplacestatsforecast-config
+  namespace: acm-production
+  resourceVersion: "28616573"
+  uid: 7a472f18-b102-4249-b7c4-f32e2a4b0d98

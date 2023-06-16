@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  AcmPlaceConfiguration__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=acmPlace;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmPlaceConfiguration__GrpcHost: 0.0.0.0
+  AcmPlaceConfiguration__GrpcPort: "10053"
+  AcmPlaceConfiguration__MaxDegreeOfParallelism: "1"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:19Z"
+  labels:
+    app: acmplace
+  name: acmplace-config
+  namespace: acm-production
+  resourceVersion: "27476265"
+  uid: e216ed63-0a0c-45a8-8461-e5e0400ffcf5

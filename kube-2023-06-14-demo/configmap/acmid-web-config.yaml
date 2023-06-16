@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  config.js: |
+    window.REACT_APP_API_ENDPOINT = 'https://id.awing.com.vn'
+    window.REACT_APP_I18NEXT_BACKEND = '/locales/{{lng}}/{{ns}}.json'
+    window.IFRAME_TIMEOUT = '200'
+    window.OTP_LENGTH = '6'
+    window.URL_AWING_JIRABOOT = "https://t.me/AwingVnBot"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:19Z"
+  name: acmid-web-config
+  namespace: acm-production
+  resourceVersion: "23595750"
+  uid: 1a772b36-c53e-4155-8b21-11234dbc3d96

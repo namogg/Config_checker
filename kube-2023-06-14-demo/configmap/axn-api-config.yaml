@@ -1,0 +1,38 @@
+apiVersion: v1
+data:
+  Axn__Api__AllowOrigins: https://acm-exchange.awing.com.vn
+  Axn__Api__StaticFileDirectory: /acmResources
+  Axn__Api__TempFileDirectory: /acmResources/temp
+  Axn__Grpc__AcmAdminTarget: http://acmadmin-svc.acm-production:80
+  Axn__Grpc__AcmAdpTarget: http://acmadp-svc.acm-production:80
+  Axn__Grpc__AcmAdsTarget: http://acmads-svc.acm-production:80
+  Axn__Grpc__AcmBaseTarget: http://acmbase-svc.acm-production:80
+  Axn__Grpc__AcmCampaignMatchRateTarget: http://acmcampaignmatchrate-svc.acm-production:80
+  Axn__Grpc__AcmCampaignTarget: http://acmcampaign-svc.acm-production:80
+  Axn__Grpc__AcmDirectoryTarget: http://acmdirectory-svc.acm-production:80
+  Axn__Grpc__AcmPlaceTarget: http://acmplace-svc.acm-production:80
+  Axn__Grpc__AcmRemarketingTarget: http://acmremarketing-svc.acm-production:80
+  Axn__Grpc__AcmSagaTarget: http://acmsaga-svc.acm-production:80
+  Axn__Grpc__AcmScheduleTarget: http://acmschedule-svc.acm-production:80
+  Axn__Grpc__AcmTemplateTarget: http://acmtemplate-svc.acm-production:80
+  Axn__Grpc__AxnAdminTarget: http://axnadmin-svc.acm-production:80
+  Axn__Grpc__AxnCampaignTarget: http://axncampaign-svc.acm-production:80
+  Axn__Grpc__AxnNotificationTarget: http://axnnotification-svc.acm-production:80
+  Axn__Grpc__AxnPlaceTarget: http://axnplace-svc.acm-production:80
+  Axn__Grpc__TaskSchedulerTarget: http://taskscheduler-svc.acm-production:80
+  Axn__Kafka__Server: 172.16.1.106:9093
+  Axn__SsoAuthen__BaseAuthenIdUri: http://acmid-api-svc.acm-production:80
+  Axn__SsoAuthen__ClientId: "300"
+  Axn__SsoAuthen__CookieSameSiteMode: Strict
+  Axn__SsoAuthen__RedisConnectionString: 172.16.1.106:6380
+  Axn__SsoAuthen__RedisDatabase: "5"
+  Axn__SsoAuthen__TTLInDays: "7"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:26Z"
+  labels:
+    app: axn-api
+  name: axn-api-config
+  namespace: acm-production
+  resourceVersion: "27480579"
+  uid: 0c9bf395-a179-405b-bc7d-71541c54dd97

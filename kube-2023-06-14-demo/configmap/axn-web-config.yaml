@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  config.js: "window.REACT_APP_API_ENDPOINT = 'https://acm-exchange.awing.com.vn/api'\nwindow.REACT_APP_I18NEXT_BACKEND
+    = '/locales/{{lng}}/{{ns}}.json'\nwindow.GOOGLE_API_KEY = 'AIzaSyDvLhvxZpQc49FzFoReP_K5yicT33kzcsw'\nwindow.GOONG_API_KEY
+    = 'JUkTlUZ11wZmX6jSPoLPtEsG8VuPbMddMcihKNoe'\nwindow.GOONG_MAP_KEY = 'hSwoA8SR8o0yMkP7ucnADcx3xY8OD4MnxZTMrCfo'\nwindow.REACT_APP_CAPTIVE_DOMAIN
+    = 'http://connect.awing.com.vn'\nwindow.REACT_APP_ID_DOMAIN = 'http://id.awing.com.vn'\nwindow.REACT_APP_FILE_STATIC_PATH
+    = '/static/Files'\nwindow.REACT_APP_FILE_TEMP_PATH = '/static/Files/temp'\nwindow.REACT_APP_TEMPLATE_FILE_PATH
+    = \"/static/Files/template\"\nwindow.CLIENT_ID = \"300\"        \n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:26Z"
+  name: axn-web-config
+  namespace: acm-production
+  resourceVersion: "24698294"
+  uid: 3f5e42e3-6ef5-4fa9-aea4-5402307bc7a3

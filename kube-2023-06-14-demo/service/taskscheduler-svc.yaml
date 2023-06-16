@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-03-30T09:35:42Z"
+  labels:
+    app: taskscheduler
+  name: taskscheduler-svc
+  namespace: acm-production
+  resourceVersion: "27475280"
+  uid: ce3e098d-a4ef-4847-9afc-36dc08ac2dbf
+spec:
+  clusterIP: 10.99.16.84
+  clusterIPs:
+  - 10.99.16.84
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31097
+    port: 80
+    protocol: TCP
+    targetPort: 10099
+  selector:
+    app: taskscheduler
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

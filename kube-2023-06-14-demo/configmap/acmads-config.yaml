@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  AdsConfiguration__Grpc__AcmAdpTarget: http://acmadp-svc.acm-production:80
+  AdsConfiguration__Grpc__AcmCampaignMatchRateTarget: http://acmcampaignmatchrate-svc.acm-production:80
+  AdsConfiguration__Grpc__AcmCampaignTarget: http://acmcampaign-svc.acm-production:80
+  AdsConfiguration__Grpc__AcmPlaceTarget: http://acmplace-svc.acm-production:80
+  AdsConfiguration__Grpc__AcmRemarketingTarget: http://acmremarketing-svc.acm-production:80
+  AdsConfiguration__Grpc__AcmScheduleTarget: http://acmschedule-svc.acm-production:80
+  AdsConfiguration__Grpc__AxnCampaignTarget: http://axncampaign-svc.acm-production:80
+  AdsConfiguration__Grpc__AxnPlaceTarget: http://axnplace-svc.acm-production:80
+  AdsConfiguration__Kafka__BootstrapServers: 172.16.1.106:9093
+  AdsConfiguration__MongoDB__MongoDbConnectionString: mongodb://172.16.1.106:27018
+  AdsConfiguration__MongoDB__MongoDbName: acmAds
+  AdsConfiguration__Service__ExpiredTime: "23:55"
+  AdsConfiguration__Service__GrpcHost: 0.0.0.0
+  AdsConfiguration__Service__GrpcPort: "10056"
+  AdsConfiguration__Service__MaxQueue: "100"
+  AdsConfiguration__Service__RedisHosts: 172.16.1.106:6380
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:17Z"
+  labels:
+    app: acmads
+  name: acmads-config
+  namespace: acm-production
+  resourceVersion: "33907896"
+  uid: 1a135f62-35c2-451c-b668-97526742d3c4

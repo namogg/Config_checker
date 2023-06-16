@@ -1,0 +1,54 @@
+Các file có trong official mà không có trong demo
+config-map-freeradius-users.yaml, config-map-freeradius-clients.yaml
+
+Các file có trong demo mà không có trong official
+old-acmresourceforecast-config.yaml, old-acmplacestatsforecast-config.yaml, db-config.yaml
+
+===============================================================================
+Kiểm tra: acmadpcronservice-config.yaml
+Các keys có trong demo mà không có trong official: AcmAdpCronServiceConfiguration__MongoDbName
+Các keys có trong official mà không có trong demo: AcmAdpCronServiceConfiguration__DatabaseName, AcmAdpCronServiceConfiguration__AcmScheduleDbConnectionString
+===============================================================================
+Kiểm tra: acmschedulecalculation-config.yaml
+Các keys có trong official mà không có trong demo: AcmScheduleCalculationConfiguration__Service__LowerRatio, Logging__LogLevel__Default
+===============================================================================
+Kiểm tra: acmplace-config.yaml
+Các keys có trong demo mà không có trong official: AcmPlaceConfiguration__MaxDegreeOfParallelism
+Các keys có trong official mà không có trong demo: AcmPlaceConfiguration__MaxTotalTasks
+===============================================================================
+Kiểm tra: axnnotification-config.yaml
+Các keys có trong demo mà không có trong official: AxnNotificationConfiguration__Grpc__AcmDirectoryTarget
+===============================================================================
+Kiểm tra: acmadmin-api-config.yaml
+Các keys có trong official mà không có trong demo: ABJ
+===============================================================================
+Kiểm tra: acmads-config.yaml
+Các keys có trong official mà không có trong demo: Logging__LogLevel__Default
+===============================================================================
+Kiểm tra: acmadp-config.yaml
+Các keys có trong demo mà không có trong official: AdpConfiguration__TimeScaleDbSchema
+Các keys có trong official mà không có trong demo: AdpConfiguration__GrpcHost
+===============================================================================
+Kiểm tra: acm-api-config.yaml
+Các keys có trong demo mà không có trong official: Acm__Api__AllowOrigin, sjdfhjsdf
+Các keys có trong official mà không có trong demo: Acm__Api__ReactAppTarget, Acm__Api__CaptchaVerifyApi, ABCXYZ, Acm__Api__MaxFailedLogin, Acm__Api__PasswordSalt, Acm__Grpc__AcmIdTarget, Acm__Api__TokenSecretKey, Acm__Api__CaptchaSiteKey, Acm__Api__CaptchaSecret
+===============================================================================
+Kiểm tra: axn-api-config.yaml
+Các keys có trong demo mà không có trong official: Axn__Api__AllowOrigins
+Các keys có trong official mà không có trong demo: Axn__Api__CaptchaSecret, Axn__Api__CaptchaSiteKey, Axn_Api_TempFileDirectory, Axn__Grpc__AcmIdTarget, Axn__Api__MaxFailedLogin, Axn__Api__PasswordSalt, Axn__Api__TokenSecretKey, Axn__Api__ReactAppTarget, Axn__Api__CaptchaVerifyApi
+===============================================================================
+Kiểm tra: acmadsworker-config.yaml
+Các keys có trong official mà không có trong demo: Logging__LogLevel__AcmAds.Worker.Workers.CampaignBlockingWorker
+===============================================================================
+Kiểm tra: acmid-api-config.yaml
+Các keys có trong official mà không có trong demo: Logging__LogLevel__Microsoft.EntityFrameworkCore, Logging__LogLevel__System.Net.Http.HttpClient
+===============================================================================
+Kiểm tra: acmcaptive-v2-web-config.yaml
+Các keys có trong demo mà không có trong official: Logging__LogLevel__acm-production
+Các keys có trong official mà không có trong demo: Logging__LogLevel__Default
+===============================================================================
+Kiểm tra: acmcaptive-web-config.yaml
+Các keys có trong official mà không có trong demo: CaptiveConfiguration__TokenSecretKey, Logging__LogLevel__AcmCaptive.Models.CustomerActionRepo, Logging__LogLevel__AcmCaptive.Tasks.AnalyticProducerWorker
+===============================================================================
+Kiểm tra: taskscheduler-config.yaml
+Các keys có trong demo mà không có trong official: ApiSettings__TimeoutInSeconds, ApiSettings__AesSecretKey, ApiSettings__MaxDegreeOfParallelism

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-08-02T04:02:56Z"
+  labels:
+    app: axn-web
+  name: axn-web-svc
+  namespace: default
+  resourceVersion: "9539618"
+  uid: 55d8858f-2b21-4222-b590-5f30ebe90563
+spec:
+  clusterIP: 10.104.124.253
+  clusterIPs:
+  - 10.104.124.253
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30307
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: axn-web
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

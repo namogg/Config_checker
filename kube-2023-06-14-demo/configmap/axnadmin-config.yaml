@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  AxnAdminConfiguration__Service__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=axnAdmin;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AxnAdminConfiguration__Service__GrpcHost: 0.0.0.0
+  AxnAdminConfiguration__Service__GrpcPort: "10057"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:25Z"
+  labels:
+    app: axnadmin
+  name: axnadmin-config
+  namespace: acm-production
+  resourceVersion: "25790437"
+  uid: 1acece0b-4a51-4258-a502-8382f7381d4d

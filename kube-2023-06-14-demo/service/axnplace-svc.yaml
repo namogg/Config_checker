@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-27T06:54:30Z"
+  labels:
+    app: axnplace
+  name: axnplace-svc
+  namespace: acm-production
+  resourceVersion: "24692261"
+  uid: 358a6445-dc3b-48e2-9067-5d3e560e034f
+spec:
+  clusterIP: 10.110.88.28
+  clusterIPs:
+  - 10.110.88.28
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30770
+    port: 80
+    protocol: TCP
+    targetPort: 10059
+  selector:
+    app: axnplace
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

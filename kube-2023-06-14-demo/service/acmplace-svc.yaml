@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-27T06:54:23Z"
+  labels:
+    app: acmplace
+  name: acmplace-svc
+  namespace: acm-production
+  resourceVersion: "24696876"
+  uid: e896b0ea-321a-4d91-92a1-5ee4bf47e2bf
+spec:
+  clusterIP: 10.110.252.40
+  clusterIPs:
+  - 10.110.252.40
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31280
+    port: 80
+    protocol: TCP
+    targetPort: 10053
+  selector:
+    app: acmplace
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

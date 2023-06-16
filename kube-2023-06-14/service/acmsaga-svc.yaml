@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-09T19:26:22Z"
+  labels:
+    app: acmsaga
+  name: acmsaga-svc
+  namespace: default
+  resourceVersion: "9939"
+  uid: d29daa26-8696-48df-a737-b83eabcdf0d5
+spec:
+  clusterIP: 10.109.62.172
+  clusterIPs:
+  - 10.109.62.172
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30374
+    port: 80
+    protocol: TCP
+    targetPort: 11056
+  selector:
+    app: acmsaga
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

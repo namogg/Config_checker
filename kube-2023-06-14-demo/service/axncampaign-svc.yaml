@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-27T06:54:29Z"
+  labels:
+    app: axncampaign
+  name: axncampaign-svc
+  namespace: acm-production
+  resourceVersion: "24791810"
+  uid: 10edab04-55b2-4a6b-bd30-178b86c99d6a
+spec:
+  clusterIP: 10.99.209.119
+  clusterIPs:
+  - 10.99.209.119
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32623
+    port: 80
+    protocol: TCP
+    targetPort: 10058
+  selector:
+    app: axncampaign
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

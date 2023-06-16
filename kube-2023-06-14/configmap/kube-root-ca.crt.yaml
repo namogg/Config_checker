@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIC5zCCAc+gAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl
+    cm5ldGVzMB4XDTIxMDYwOTE4MDcwMloXDTMxMDYwNzE4MDcwMlowFTETMBEGA1UE
+    AxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMVp
+    wIQsX68Vq5HKh1DB4LrpnitE7YVtQjA4FHGATmZsFWEb0KACy+E88km9DEHArZ7o
+    rkrwI1v6reAMJZiat61VLNp5rXSMw69NC4jvboyIDF6RTFhWSRXQ1tKc72Wvn76K
+    v5rSlc2gdhB01pKFC5L+JQBiP8z/H+X82EQVskZRm6aQLFUtEFWTUUN2kcLcpB+V
+    dnCnKYjq7Y/QrdNNucbrP7HLaR2s2fq1I+eelkByfnL3hI2stU5aKFnclmTwaLp0
+    S7rtKtnbtRe1ctWVZjpfUMEAWbYyXTka8zfPM1xaMVEZEO4El9lPX+L0iYsTUVun
+    mcEsNk/e8x9ixjueLWkCAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB
+    /wQFMAMBAf8wHQYDVR0OBBYEFA2BgzF6YqFva7SwjDI0jC+mmiZ9MA0GCSqGSIb3
+    DQEBCwUAA4IBAQC1t6Ob4eeZqo4NJqtEb4BwNsynF7oiytOTnURxikwZVGHuUauQ
+    uXrFEZJM/hUP3u2+OGOZt6xh0u6OLUOkzbxvm6pFBRpOdOgN8DHwr/9PD6Adsgbb
+    wdgThMXSb2TnCyLJIKjCFBabTqLMTHgG41XxQH9e7djhM4j1mn6EYSyJ+33jPCy4
+    6YgscGvIDeErmntl/zYI77OZqMtqjkGYrd2NYTHufpsIlIBJoJemAHOSNQObcOyH
+    D9RjCmCcEutD3TmJ0bwHUwiHxXzeDVjuvbje5za94ShlvvfD3xKewrdd7x6KDGK0
+    tSpBRlVNuDmiDVVZsWO3HnoYwKwDapJSgp0Y
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-06-09T18:07:43Z"
+  name: kube-root-ca.crt
+  namespace: default
+  resourceVersion: "412"
+  uid: ab8d8ee6-9c8a-4fe1-96e4-3c356fe49beb

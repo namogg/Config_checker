@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+  creationTimestamp: "2023-02-27T06:54:28Z"
+  labels:
+    app: acmsolver
+  name: acmsolver-svc
+  namespace: acm-production
+  resourceVersion: "23565991"
+  uid: ba0d4a3d-dec7-4dad-8340-2c3dd283fc5f
+spec:
+  clusterIP: 10.108.160.156
+  clusterIPs:
+  - 10.108.160.156
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30789
+    port: 80
+    protocol: TCP
+    targetPort: 50051
+  selector:
+    app: acmsolver
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
