@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-09T19:27:02Z"
+  labels:
+    app: axncampaign
+  name: axncampaign-svc
+  namespace: default
+  resourceVersion: "10065"
+  uid: 34b02848-ba32-4e70-bad5-c9d8af7ddffb
+spec:
+  clusterIP: 10.99.209.119
+  clusterIPs:
+  - 10.99.209.119
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32623
+    port: 80
+    protocol: TCP
+    targetPort: 10058
+  selector:
+    app: axncampaign
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

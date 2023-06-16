@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  AxnPlaceConfiguration__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=axnPlace;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AxnPlaceConfiguration__GrpcHost: 0.0.0.0
+  AxnPlaceConfiguration__GrpcPort: "10059"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:26Z"
+  labels:
+    app: axnplace
+  name: axnplace-config
+  namespace: acm-production
+  resourceVersion: "30885668"
+  uid: f18d9415-cca9-4e11-b4bd-df4400820bb8

@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "6"
+  creationTimestamp: "2023-03-21T03:05:12Z"
+  generation: 6
+  labels:
+    app: acmcaptive-v2-web
+  name: acmcaptive-v2-web-dep
+  namespace: acm-production
+  resourceVersion: "32690418"
+  uid: b25fb4a8-0235-4ff3-a49d-c40631a43295
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: acmcaptive-v2-web
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: acmcaptive-v2-web
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: acmcaptive-v2-web-config
+        image: registry.awing.vn/acm-production/acmcaptive-cna-android-web:1.0.62
+        imagePullPolicy: IfNotPresent
+        name: acmcaptive-v2-web
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: awingtimezone
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: registry-production-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /usr/share/zoneinfo/Asia/Ho_Chi_Minh
+          type: ""
+        name: awingtimezone
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2023-03-21T03:05:12Z"
+    lastUpdateTime: "2023-04-26T11:36:28Z"
+    message: ReplicaSet "acmcaptive-v2-web-dep-575b6cdff4" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2023-05-08T11:35:07Z"
+    lastUpdateTime: "2023-05-08T11:35:07Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 6
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

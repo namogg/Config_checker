@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    haproxy.org/ssl-redirect: "true"
+    kubernetes.io/ingress.class: haproxy
+  creationTimestamp: "2022-12-06T07:13:10Z"
+  generation: 2
+  name: monitor-acmservice-ingress
+  namespace: default
+  resourceVersion: "120989496"
+  uid: 0a5c8da8-4587-45f5-b4e5-ce7aedde7b42
+spec:
+  rules:
+  - host: monitor-acmservice.awing.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmservice-monitor-svc
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - monitor-acmservice.awing.vn
+    secretName: awingtls
+status:
+  loadBalancer: {}

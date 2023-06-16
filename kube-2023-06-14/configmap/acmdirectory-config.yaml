@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  AwingDirectoryConfiguration__Service__DatabaseConnectionString: Server=192.168.10.54;Database=acmDirectory;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AwingDirectoryConfiguration__Service__GrpcHost: 0.0.0.0
+  AwingDirectoryConfiguration__Service__GrpcPort: "11058"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-07-28T15:17:18Z"
+  labels:
+    app: acmdirectory
+  name: acmdirectory-config
+  namespace: default
+  resourceVersion: "8727306"
+  uid: 431dc43a-5a2d-48e3-9a54-4c86ee88e7d6

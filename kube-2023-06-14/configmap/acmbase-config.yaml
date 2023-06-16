@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  AcmBaseConfiguration__Service__DatabaseConnectionString: Server=192.168.10.54;Database=acmBase;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmBaseConfiguration__Service__DatabaseConnectionTimeout: "30"
+  AcmBaseConfiguration__Service__GrpcHost: 0.0.0.0
+  AcmBaseConfiguration__Service__GrpcPort: "11062"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-07-28T15:24:27Z"
+  labels:
+    app: acmbase
+  name: acmbase-config
+  namespace: default
+  resourceVersion: "8728723"
+  uid: d4c6c52e-0f89-4f33-ab49-d4a9bdef4ebe

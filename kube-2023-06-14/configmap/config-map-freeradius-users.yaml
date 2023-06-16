@@ -1,0 +1,76 @@
+apiVersion: v1
+data:
+  users: |
+    awing           Cleartext-Password := "Awing@2018"
+                    Idle-Timeout := "1800",
+                    Session-Timeout := "3000"
+    awing33           Cleartext-Password := "Awing30@2018"
+                    Idle-Timeout := "1800",
+                    Session-Timeout := "1800"
+    awing241           Cleartext-Password := "Awing240@2018"
+                    Idle-Timeout := "3600",
+                    Session-Timeout := "14400"
+    awing720           Cleartext-Password := "Awing720@2018"
+                    Idle-Timeout := "14400",
+                    Session-Timeout := "43200"
+    awing30           Cleartext-Password := "Awing30@2018"
+                    Idle-Timeout := "900",
+                    Session-Timeout := "1800"
+    awing40           Cleartext-Password := "Awing40@2018"
+                    Idle-Timeout := "1200",
+                    Session-Timeout := "2400"
+    awing50           Cleartext-Password := "Awing50@2018"
+                    Idle-Timeout := "1800",
+                    Session-Timeout := "3000"
+    awing60           Cleartext-Password := "Awing60@2018"
+                    Idle-Timeout := "1800",
+                    Session-Timeout := "3600"
+    awing90           Cleartext-Password := "Awing90@2018"
+                    Idle-Timeout := "3600",
+                    Session-Timeout := "5400"
+    awing120           Cleartext-Password := "Awing120@2018"
+                    Idle-Timeout := "3600",
+                    Session-Timeout := "7200"
+    awing150           Cleartext-Password := "Awing150@2018"
+                    Idle-Timeout := "5400",
+                    Session-Timeout := "9000"
+    awing180           Cleartext-Password := "Awing180@2018"
+                    Idle-Timeout := "7200",
+                    Session-Timeout := "10800"
+    awing240           Cleartext-Password := "Awing240@2018"
+                    Idle-Timeout := "7200",
+                    Session-Timeout := "14400"
+    awing360           Cleartext-Password := "Awing360@2018"
+                    Idle-Timeout := "10800",
+                    Session-Timeout := "21600"
+    awing480           Cleartext-Password := "Awing480@2018"
+                    Idle-Timeout := "14400",
+                    Session-Timeout := "28800"
+    awing1d           Cleartext-Password := "Awing1d@2018"
+                    Idle-Timeout := "43200",
+                    Session-Timeout := "86400"
+    awing2d           Cleartext-Password := "Awing2d@2018"
+                    Idle-Timeout := "86400",
+                    Session-Timeout := "172800"
+    awing3d           Cleartext-Password := "Awing3d@2018"
+                    Idle-Timeout := "129600",
+                    Session-Timeout := "259200"
+    awing4d           Cleartext-Password := "Awing4d@2018"
+                    Idle-Timeout := "172800",
+                    Session-Timeout := "345600"
+    awing5d           Cleartext-Password := "Awing5d@2018"
+                    Idle-Timeout := "216000",
+                    Session-Timeout := "432000"
+    awing6d           Cleartext-Password := "Awing6d@2018"
+                    Idle-Timeout := "259200",
+                    Session-Timeout := "518400"
+    awing7d           Cleartext-Password := "Awing7d@2018"
+                    Idle-Timeout := "302400",
+                    Session-Timeout := "604800"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-06-09T19:00:53Z"
+  name: config-map-freeradius-users
+  namespace: default
+  resourceVersion: "73798000"
+  uid: 48f6d840-bf18-4d19-9573-ae9ead8401b4

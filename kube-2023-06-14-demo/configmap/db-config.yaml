@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  DB_MONGO_HOST: 172.16.1.106:27017
+  DB_MYSQL_HOST: 172.16.1.106
+  DB_MYSQL_PASSWORD: Awing@2023
+  DB_MYSQL_PORT: "3307"
+  DB_MYSQL_USERNAME: acm
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-03-16T05:08:34Z"
+  name: db-config
+  namespace: acm-production
+  resourceVersion: "25681762"
+  uid: e4dd0399-8b85-4c42-8e7e-28fe24970460

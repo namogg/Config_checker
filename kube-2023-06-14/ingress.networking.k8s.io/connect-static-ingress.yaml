@@ -1,0 +1,68 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    haproxy.org/path-rewrite: /static/(.*) /\1
+    kubernetes.io/ingress.class: haproxy
+  creationTimestamp: "2022-01-04T23:34:38Z"
+  generation: 5
+  name: connect-static-ingress
+  namespace: default
+  resourceVersion: "129001307"
+  uid: a0d36c9e-9b4d-4014-83f8-6875971d8a12
+spec:
+  rules:
+  - host: connect.awing.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmstatic-web-svc
+            port:
+              number: 80
+        path: /static/
+        pathType: Prefix
+  - host: acm.awingconnect.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmstatic-web-svc
+            port:
+              number: 80
+        path: /static/
+        pathType: Prefix
+  - host: connect-v2.awing.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmstatic-web-svc
+            port:
+              number: 80
+        path: /static/
+        pathType: Prefix
+  - host: acm.awing.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmstatic-web-svc
+            port:
+              number: 80
+        path: /static/
+        pathType: Prefix
+  - host: acm-exchange.awing.vn
+    http:
+      paths:
+      - backend:
+          service:
+            name: acmstatic-web-svc
+            port:
+              number: 80
+        path: /static/
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - ip: 10.99.249.54

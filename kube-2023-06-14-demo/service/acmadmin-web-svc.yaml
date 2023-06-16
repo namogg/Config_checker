@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+  creationTimestamp: "2023-02-27T06:54:21Z"
+  labels:
+    app: acmadmin-web
+  name: acmadmin-web-svc
+  namespace: acm-production
+  resourceVersion: "23565871"
+  uid: 53c02bfa-a1dd-4a06-9615-2f02bc4fe864
+spec:
+  clusterIP: 10.105.230.245
+  clusterIPs:
+  - 10.105.230.245
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32465
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: acmadmin-web
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

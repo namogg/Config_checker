@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  ApiSettings__Acm__BaseUrl: http://acm-api-svc:80
+  ApiSettings__Acm__SsoClientId: "200"
+  ApiSettings__AesSecretKey: gx4ia05eVytEXfLYHU9GSg==
+  ApiSettings__Axn__BaseUrl: http://axn-api-svc:80
+  ApiSettings__Axn__SsoClientId: "300"
+  ApiSettings__MaxDegreeOfParallelism: "10"
+  ApiSettings__SsoBaseUrl: http://acmid-api-svc:80
+  ApiSettings__TimeoutInSeconds: "300"
+  DataConfiguration__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=taskScheduler;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  DataConfiguration__GrpcPort: "10099"
+  Kafka__BootstrapServers: 172.16.1.106:9093
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-03-30T09:35:42Z"
+  labels:
+    app: taskscheduler
+  name: taskscheduler-config
+  namespace: acm-production
+  resourceVersion: "29573744"
+  uid: e432fb1e-d9ff-4b5c-af1e-4722aa4f3d60

@@ -1,0 +1,3 @@
+import yaml
+
+with open('kube-2023-06-14\configmap\acm-api-config.yaml','r') as 

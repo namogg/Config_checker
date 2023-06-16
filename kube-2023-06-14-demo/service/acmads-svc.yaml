@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-27T06:54:21Z"
+  labels:
+    app: acmads
+  name: acmads-svc
+  namespace: acm-production
+  resourceVersion: "24694547"
+  uid: b81607e9-9b12-43db-8921-34bb6d985051
+spec:
+  clusterIP: 10.102.252.123
+  clusterIPs:
+  - 10.102.252.123
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31648
+    port: 80
+    protocol: TCP
+    targetPort: 10056
+  selector:
+    app: acmads
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  AcmCampaignConfiguration__DeviceDatabaseConnectionString: Server=192.168.10.54;Database=acmDevice;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmcampaignConfiguration__DatabaseConnectionString: Server=192.168.10.54;Database=axnCampaign;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmcampaignConfiguration__GrpcHost: 0.0.0.0
+  AcmcampaignConfiguration__GrpcPort: "10058"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-07-28T15:22:46Z"
+  labels:
+    app: axncampaign
+  name: axncampaign-config
+  namespace: default
+  resourceVersion: "8728391"
+  uid: d2e1f961-ab91-4627-a760-e7e5d6cdbdfb

@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  config.py: "# GRPC config\nGRPC_MAX_WORKER = 10\n\nconnection_str_real = \"mongodb://acm:AWing%402020@172.16.1.204:27017/?authSource=admin\"
+    \n\ndb_name = \"oldacmResourceForecast\"\n\nforecast_info_collection = \"forecastInfo\"\n\nplace_view_collection
+    = \"placeView\"\n\nholiday_collection = \"holiday\"\n\nforecast_result_collection
+    = \"forecastResult\"\n\nLSTM_EPOCHES = 100 # default 500\n\nLSTM_INPUTS = 14\n\nLSTM_OUTPUTS
+    = 14\n\n#Trained models save path\n\nSAVE_PATH = './saved_model/'\n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-04-07T03:56:37Z"
+  name: old-acmresourceforecast-config
+  namespace: acm-production
+  resourceVersion: "28583131"
+  uid: 51951fd9-39de-4d61-8211-45021497b056

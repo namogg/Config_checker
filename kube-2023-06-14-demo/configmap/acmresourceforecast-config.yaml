@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  config.py: "# Database config\nconnection_str_real = \"mongodb://172.16.1.106:27018\"\ndb_name
+    = \"acmResourceForecast-production\"\n#NeuralProphet consantraints\nNEURALPROPHET_INPUTS
+    = 14 \nNEURALPROPHET_OUTPUTS = 14\nforecast_window = 8\nNUM_CPU = 10\n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-10-03T08:02:50Z"
+  name: acmresourceforecast-config
+  namespace: acm-production
+  resourceVersion: "25790064"
+  uid: 3dabd9d2-644e-4419-bd9f-b8b05165a2d0

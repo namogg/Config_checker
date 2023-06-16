@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-10-07T10:35:26Z"
+  labels:
+    app: acmservice-monitor
+  name: acmservice-monitor-svc
+  namespace: default
+  resourceVersion: "21298308"
+  uid: 43f27133-0102-47c6-b936-a7ff0549be08
+spec:
+  clusterIP: 10.104.181.170
+  clusterIPs:
+  - 10.104.181.170
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31398
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: acmservice-monitor
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

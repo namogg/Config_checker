@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-09T19:26:26Z"
+  labels:
+    app: acmschedule
+  name: acmschedule-svc
+  namespace: default
+  resourceVersion: "9952"
+  uid: 1c78f176-b77c-4ab6-8794-1ef1ed991ad2
+spec:
+  clusterIP: 10.111.50.196
+  clusterIPs:
+  - 10.111.50.196
+  externalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31808
+    port: 80
+    protocol: TCP
+    targetPort: 10060
+  selector:
+    app: acmschedule
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

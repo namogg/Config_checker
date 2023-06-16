@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+  config.py: |
+    # GRPC config
+    GRPC_MAX_WORKER = 10
+    GRPC_PORT = 50051
+    MAX_MESSAGE_LENGTH = 1024 * 1024 * 1024
+
+    # CPLEX
+    CPLEX_GAP = 0.1
+    CPLEX_OPTIMALITY_TARGET = 0
+    CPLEX_DELTA = 0.9
+    CPLEX_FEASIBILITY = 10**-4
+
+    # SERVICE
+    ALPHA_MAX_WORKER = 5
+    IS_SKIP_ZERO_RESULT = True # bỏ nghiệm = 0 của campaign cấp B
+    LOG_LEVEL = "DEBUG" # DEBUG < INFO < WARNING < ERROR < CRITICAL < FATAL
+    #log_fomartter = "%(message)s"
+    # Nếu muốn thêm thời gian và loglevel thì dùng format bên dưới
+    LOG_FORMATTER = "%(asctime)s:%(levelname)s:%(message)s"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:18Z"
+  name: acm-cplex-solver-config
+  namespace: acm-production
+  resourceVersion: "34159297"
+  uid: 087cde6e-d3dd-45b2-adf2-fedcec789392

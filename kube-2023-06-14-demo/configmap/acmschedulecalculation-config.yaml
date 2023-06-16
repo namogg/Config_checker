@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  AcmScheduleCalculationConfiguration__Grpc__AcmAdpTarget: http://acmadp-svc.acm-production:80
+  AcmScheduleCalculationConfiguration__Grpc__AcmCampaignTarget: http://acmcampaign-svc.acm-production:80
+  AcmScheduleCalculationConfiguration__Grpc__AcmPlaceTarget: http://acmplace-svc.acm-production:80
+  AcmScheduleCalculationConfiguration__Grpc__AcmSagaTarget: http://acmsaga-svc.acm-production:80
+  AcmScheduleCalculationConfiguration__Grpc__AcmSolverTarget: http://acmsolver-svc.acm-production:80
+  AcmScheduleCalculationConfiguration__Grpc__AxnCampaignTarget: http://axncampaign-svc.acm-production:80
+  AcmScheduleCalculationConfiguration__Grpc__AxnPlaceTarget: http://axnplace-svc.acm-production:80
+  AcmScheduleCalculationConfiguration__Grpc__StreamNumberOfRecords: "100"
+  AcmScheduleCalculationConfiguration__Kafka__BootstrapServers: 172.16.1.106:9093
+  AcmScheduleCalculationConfiguration__Service__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=acmSchedule;user
+    id=acm;password=Awing@2018;CharSet=utf8;AllowLoadLocalInfile=true;
+  AcmScheduleCalculationConfiguration__Service__DatabaseConnectionTimeout: "30"
+  AcmScheduleCalculationConfiguration__Service__MaxDays: "100"
+  AcmScheduleCalculationConfiguration__Service__MaxDegreeOfParallelism: "4"
+  AcmScheduleCalculationConfiguration__Service__Retries: "2"
+  AcmScheduleCalculationConfiguration__Service__TimeoutMinutes: "360"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-02-27T04:14:24Z"
+  labels:
+    app: acmschedulecalculation
+  name: acmschedulecalculation-config
+  namespace: acm-production
+  resourceVersion: "28336603"
+  uid: 9bd80ce0-e488-411a-ac06-66469c629963

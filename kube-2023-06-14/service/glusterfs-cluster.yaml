@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-06-09T21:07:09Z"
+  name: glusterfs-cluster
+  namespace: default
+  resourceVersion: "26053"
+  uid: 05745027-7bd9-44d7-82c4-bc97efcc9511
+spec:
+  clusterIP: 10.104.2.124
+  clusterIPs:
+  - 10.104.2.124
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 1
+    protocol: TCP
+    targetPort: 1
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

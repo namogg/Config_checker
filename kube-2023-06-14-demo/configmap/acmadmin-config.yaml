@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  AcmAdminConfiguration__DatabaseConnectionString: Server=172.16.1.106;Port=3307;Database=acmAdmin;user
+    id=acm;password=Awing@2018;CharSet=utf8;
+  AcmAdminConfiguration__DatabaseConnectionTimeout: "30"
+  AcmAdminConfiguration__GrpcHost: 0.0.0.0
+  AcmAdminConfiguration__GrpcPort: "10052"
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+  creationTimestamp: "2023-02-27T04:14:16Z"
+  labels:
+    app: acmadmin
+  name: acmadmin-config
+  namespace: acm-production
+  resourceVersion: "25794879"
+  uid: 9d55f5e7-d2ce-4728-8585-0048b2977ce9

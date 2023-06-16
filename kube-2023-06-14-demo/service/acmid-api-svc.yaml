@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2023-02-27T06:54:23Z"
+  labels:
+    app: acmid-api
+  name: acmid-api-svc
+  namespace: acm-production
+  resourceVersion: "29152348"
+  uid: 54eaa468-b8bb-4f70-a4ad-6972ec917b46
+spec:
+  clusterIP: 10.104.84.194
+  clusterIPs:
+  - 10.104.84.194
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31493
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: acmid-api
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

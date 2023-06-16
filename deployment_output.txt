@@ -1,0 +1,21 @@
+Các file có trong official mà không có trong demo:
+acmfreeradius-dep.yaml
+acmwebhookservice-dep.yaml
+deeplink-web-dep.yaml
+acmapis-dep.yaml
+acmservice-monitor-dep.yaml
+
+Các file có trong demo mà không có trong official:
+old-acmresourceforecast-dep.yaml
+acmwebhook-dep.yaml
+old-acmplacestatsforecast-dep.yaml
+
+acmid-web-dep.yaml: Chính thức: 2.1.23 - 2.1.24
+acmresourceforecast-dep.yaml: Chính thức: 3.0.2 - 256
+acmschedulecalculation-dep.yaml: Chính thức: 2.0.36 - 2.0.37
+acmplacestatsforecast-dep.yaml: Chính thức: 2.0.31 - 2.0.32
+acmadpcronservice-dep.yaml: Chính thức: 2.0.36 - 2.0.38
+acm-cplex-solver-dep.yaml: Chính thức: 1.0.18 - 1.0.23
+acmcaptive-v2-web-dep.yaml: Chính thức: 1.0.65 - 1.0.62
+acmadsworker-dep.yaml: Chính thức: 2.0.19 - 2.0.20
+axnplace-dep.yaml: Chính thức: 2.0.14 - 2.0.15

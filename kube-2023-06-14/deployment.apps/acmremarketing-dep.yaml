@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2022-04-26T07:46:17Z"
+  generation: 1
+  labels:
+    app: acmremarketing
+  name: acmremarketing-dep
+  namespace: default
+  resourceVersion: "112846724"
+  uid: 8e75d0eb-7525-43cf-bfd6-a8b5c8f03e46
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: acmremarketing
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: acmremarketing
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: acmremarketing-config
+        image: registry.awing.vn/acm-production/acmremarketing-svc:2.0.3
+        imagePullPolicy: IfNotPresent
+        name: acmremarketing
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/localtime
+          name: awingtimezone
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: registry-production-secret
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /usr/share/zoneinfo/Asia/Ho_Chi_Minh
+          type: ""
+        name: awingtimezone
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2022-04-26T07:46:17Z"
+    lastUpdateTime: "2022-04-26T07:46:33Z"
+    message: ReplicaSet "acmremarketing-dep-5c755584d7" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2023-03-09T15:25:04Z"
+    lastUpdateTime: "2023-03-09T15:25:04Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

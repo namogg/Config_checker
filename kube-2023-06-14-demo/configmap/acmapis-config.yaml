@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  AcmApisConfiguration__AcmAdminTarget: acmadmin-svc:80
+  AcmApisConfiguration__AcmAdpTarget: acmadp-svc:80
+  AcmApisConfiguration__AcmCampaignTarget: acmcampaign-svc:80
+  AcmApisConfiguration__AcmIdTarget: acmid-svc:80
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+  creationTimestamp: "2023-02-27T04:14:17Z"
+  labels:
+    app: acmapis
+  name: acmapis-config
+  namespace: acm-production
+  resourceVersion: "23551518"
+  uid: 90a9cdc0-a01e-422b-a563-a544512e6be1
