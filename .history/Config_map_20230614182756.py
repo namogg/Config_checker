@@ -45,11 +45,10 @@ def show_diff_config(official_path, demo_path):
     diff_demo_official = key_list_demo - key_set_official
     diff_official_demo = key_set_official - key_list_demo
 
-    # Ghi kết quả vào file txt với bộ mã UTF-8
-    with open(output_file_path, 'a', encoding='utf-8') as f:
-        if diff_demo_official or diff_official_demo:
-            f.write("===============================================================================\n")
-            f.write(f"Kiểm tra: {os.path.basename(official_path)}\n")
+    # Ghi kết quả vào file txt
+    with open(output_file_path, 'a') as f:
+        f.write("=============================\n")
+        f.write(f"Kiểm tra: {os.path.basename(official_path)}\n")
         if diff_demo_official:
             f.write("Các keys có trong demo mà không có trong official: ")
             f.write(', '.join(diff_demo_official))
@@ -64,13 +63,13 @@ def main():
     official_files = set(get_file_names(folder_path_official))
     demo_files = set(get_file_names(folder_path_demo))
 
-    # Ghi kết quả vào file txt với bộ mã UTF-8
-    with open(output_file_path, 'w', encoding='utf-8') as f:
-        f.write("Các file có trong official mà không có trong demo\n")
-        f.write(', '.join(official_files - demo_files))
+    # Ghi kết quả vào file txt
+    with open(output_file_path, 'w') as f:
+        f.write("Các file có trong official mà không có trong demo:\n")
+        f.write('\n'.join(official_files - demo_files))
         f.write("\n\n")
-        f.write("Các file có trong demo mà không có trong official\n")
-        f.write(', '.join(demo_files - official_files))
+        f.write("Các file có trong demo mà không có trong official:\n")
+        f.write('\n'.join(demo_files - official_files))
         f.write("\n\n")
 
     #Lấy ra các file chung giữa hai folder 

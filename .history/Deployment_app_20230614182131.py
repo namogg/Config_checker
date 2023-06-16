@@ -72,7 +72,7 @@ def main():
     demo_files = set(get_file_names(folder_path_demo))
     
     # Ghi kết quả vào file txt
-    with open(output_file_path, 'w',encoding='utf-8') as f:
+    with open(output_file_path, 'w') as f:
         f.write("Các file có trong official mà không có trong demo:\n")
         f.write('\n'.join(official_files - demo_files))
         f.write("\n\n")
@@ -83,12 +83,10 @@ def main():
         #Lấy các file chung giữa hai folder
         common_elements = official_files & demo_files
         for file in common_elements:
-            
+            f.write("=============================\n")
+            f.write(file + ": ")
             official_path = os.path.join(folder_path_official, file)
             demo_path = os.path.join(folder_path_demo, file)
             diff = show_diff_images(official_path, demo_path)
             if diff:
-                f.write(file + ": ")
                 f.write(f"Chính thức: {diff}\n")
-
-main()

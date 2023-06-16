@@ -4,7 +4,7 @@ import os
 #Nhập đường dẫn đến folder chính thức và demo
 folder_path_official = 'kube-2023-06-14/deployment.apps' 
 folder_path_demo = 'kube-2023-06-14-demo/deployment.apps'
-output_file_path = 'deployment_output.txt'
+output_file_path = 'output_config.txt' # Đường dẫn đến file txt bạn muốn tạo
 
 def get_file_names(folder_path):
     """
@@ -55,10 +55,10 @@ def compare_versions(official_image, demo_image):
     """
     official_version = official_image.split(":")
     demo_version = demo_image.split(":")
-    if official_version[1] == demo_version[1]:
-        return None
+    if(official_version[1] == demo_version[1]):
+        return "Không có sự khác biệt"
     else: 
-        return f"{official_version[1]} - {demo_version[1]}"
+        return f"Có sự khác biệt( Chính thức: {official_version[1]} Demo: {demo_version[1]}"
 
 def show_diff_images(official_path, demo_path): 
     #Lấy hai image và so sánh version
@@ -71,7 +71,7 @@ def main():
     official_files = set(get_file_names(folder_path_official))
     demo_files = set(get_file_names(folder_path_demo))
     
-    # Ghi kết quả vào file txt
+    # Ghi ra file txt
     with open(output_file_path, 'w',encoding='utf-8') as f:
         f.write("Các file có trong official mà không có trong demo:\n")
         f.write('\n'.join(official_files - demo_files))
@@ -83,12 +83,13 @@ def main():
         #Lấy các file chung giữa hai folder
         common_elements = official_files & demo_files
         for file in common_elements:
-            
+            f.write("=============================\n")
+            f.write("Kiểm tra: " + file + "\n")
             official_path = os.path.join(folder_path_official, file)
             demo_path = os.path.join(folder_path_demo, file)
             diff = show_diff_images(official_path, demo_path)
-            if diff:
-                f.write(file + ": ")
-                f.write(f"Chính thức: {diff}\n")
+            f.write(diff + "\n")
+
+    print("Đã ghi")
 
 main()

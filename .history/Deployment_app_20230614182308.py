@@ -83,12 +83,11 @@ def main():
         #Lấy các file chung giữa hai folder
         common_elements = official_files & demo_files
         for file in common_elements:
-            
+            f.write(file + ": ")
             official_path = os.path.join(folder_path_official, file)
             demo_path = os.path.join(folder_path_demo, file)
             diff = show_diff_images(official_path, demo_path)
             if diff:
-                f.write(file + ": ")
                 f.write(f"Chính thức: {diff}\n")
 
 main()

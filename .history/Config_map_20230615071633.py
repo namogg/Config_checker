@@ -48,7 +48,7 @@ def show_diff_config(official_path, demo_path):
     # Ghi kết quả vào file txt với bộ mã UTF-8
     with open(output_file_path, 'a', encoding='utf-8') as f:
         if diff_demo_official or diff_official_demo:
-            f.write("===============================================================================\n")
+            f.write("====================================\n")
             f.write(f"Kiểm tra: {os.path.basename(official_path)}\n")
         if diff_demo_official:
             f.write("Các keys có trong demo mà không có trong official: ")

@@ -88,7 +88,6 @@ def main():
             demo_path = os.path.join(folder_path_demo, file)
             diff = show_diff_images(official_path, demo_path)
             if diff:
-                f.write(file + ": ")
                 f.write(f"Chính thức: {diff}\n")
 
 main()
