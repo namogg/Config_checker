@@ -11,7 +11,7 @@ def get_file_names(folder_path):
     Lấy tên các file
     ===============================
     Arg: Đường dẫn đến folder
-    Return: List các tên file
+    Return: List các tên file.
     """
     file_names = []
     for root, dirs, files in os.walk(folder_path):
